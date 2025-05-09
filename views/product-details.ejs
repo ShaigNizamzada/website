@@ -7,17 +7,37 @@
     <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css" />
     <title>Document</title>
   </head>
-  <body class="bg-warning">
-    <h1>urun detay</h1>
-    <img src="/images/<%= image %>" alt="" width="200" />
-    <p>isim : <%= name %></p>
-    <p>fiyat <%= price %></p>
-    <p>
-      <% if (isActive) { %>
-      <span>Ürün satışta mevcuttur</span>
-      <% } else { %>
-      <span>Ürün satışta mevcut değildir</span>
-      <% } %>
-    </p>
+  <body>
+    <%- include('partials/nav') %>
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-12">
+          <div class="card mb-3">
+            <div class="row">
+              <div class="col-4">
+                <img
+                  src="/images/<%= urun.imageURL %>"
+                  alt=""
+                  width="200"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <div class="card-title"><%= urun.name %></div>
+                  <p class="card-text">Fiyat <%= urun.price %></p>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Rerum ratione quas sequi. Facilis quo ullam necessitatibus
+                    fuga, officia omnis at reiciendis distinctio blanditiis qui
+                    voluptatem voluptas sint totam, iure vero!
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
